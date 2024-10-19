@@ -27,9 +27,9 @@
                   <!-- 관리자 또는 사용자 로그인 상태에 따른 메뉴 표시 -->
                 <c:if test="${sessionScope.adminLogin == true}">
                     <!-- 관리자일 경우 공지사항 및 회원정보 메뉴 표시 -->
-                    <dd><a href="${pageContext.request.contextPath}/admin/notices">공지사항</a></dd>
-                    <dd><a href="${pageContext.request.contextPath}/admin/users">회원정보</a></dd>
-                    <dd><a href="${pageContext.request.contextPath}/admin/logout">로그아웃</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/admin/boards">게시글 관리</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/admin/addNotice">공지사항 등록</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></dd>
                 </c:if>
 
                 <c:if test="${sessionScope.adminLogin != true && sessionScope.userLogin == true}">
