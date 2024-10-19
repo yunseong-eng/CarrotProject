@@ -9,6 +9,8 @@
 <title>${category} 게시판 목록</title>
 </head>
 <body>
+<div id="wrap">
+
     <h3>${category} 게시글</h3>
 
     <!-- 게시판 테이블 -->
@@ -50,6 +52,6 @@
 
     <form action="${pageContext.request.contextPath}/board/writeForm" method="get">
         <button type="submit">글 작성</button>
-    </form>
+    </form></div>
 </body>
 </html>

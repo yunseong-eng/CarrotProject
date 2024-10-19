@@ -114,3 +114,19 @@ button {
 button:hover {
     text-decoration: underline;
 }
+
+/*태블릿 (화면너비 768px 이하)*/
+@media ( max-width : 768px) {
+	#wrap {
+		display: flex;
+		flex-direction: column;
+	}
+	header {
+		width: 100%;
+		height: 120px;
+		position: sticky;
+		top: 0; /* 도달했을때 고정시킬 위치 */
+		padding: 5px;
+		z-index: 9999;
+		font-family: "Pretendard JP", serif;
+	}

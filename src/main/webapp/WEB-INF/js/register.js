@@ -46,10 +46,9 @@ $(function() {
         this.value = this.value.replace(/[^0-9]/g, ''); // 숫자가 아닌 문자는 제거
     });
 	// 입력값에서 특수문자 제거
-    $('#name, #userId, #tel2, #tel3, #email1, #email2').on('input', function() {
+    $('#userId, #tel2, #tel3, #email1, #email2').on('input', function() {
         this.value = this.value.replace(/[^0-9a-zA-Z가-힣]/g, '');
     });
-    
     //회원가입 버튼 비활성화
     $('#registerBtn').prop('disabled', true);
     /*

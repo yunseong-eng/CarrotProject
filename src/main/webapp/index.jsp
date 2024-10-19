@@ -8,8 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>carrot | 중고거래 FLEX</title>
-   <%--  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css"> --%>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+   <%--  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media.css">  --%>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -18,7 +18,7 @@
 <div id="wrap" class="container">
     <header>
         <div id="header">
-            <a href="/carrot"><img src="${context}/image/carrotLogo.jpg" class="logo"></a>
+            <a href="/carrot"><img src="${context}/image/carrotLogo.jpg" class="logo" ></a>
             <dl class="topnav">
                 <dt class="blind">top navigation</dt>
                 <!--   <dd><a href="#">고객센터</a></dd>
@@ -36,10 +36,10 @@
             </dl>
            <dl class="topnav2">
                 <dt class="blind">top navigation</dt>
-                <dd><a href="#">APP</a></dd>
-                <dd><a href="#">IOS</a></dd>
-                <dd><a href="#">ANDROID</a></dd>
-                <dd><a href="#"><img src="${pageContext.request.contextPath}/image/d2.png" width="20"></a></dd>
+                <dd><a href="https://www.apple.com/kr/app-store/">APP</a></dd>
+                <dd><a href="https://apps.apple.com/kr/app/%EB%B2%88%EA%B0%9C%EC%9E%A5%ED%84%B0/id395672275">IOS</a></dd>
+                <dd><a href="https://play.google.com/store/apps/details?id=kr.co.quicket&hl=ko&pli=1">ANDROID</a></dd>
+                <dd><a href="https://png.pngtree.com/png-clipart/20220226/ourmid/pngtree-greedy-emoji-png-image_4459716.png"><img src="${pageContext.request.contextPath}/image/d2.png" width="20"></a></dd>
             </dl>
 
             <h2 class="blind">main navigation</h2>
@@ -53,7 +53,7 @@
            <div class="searchForm" style="margin: 0 auto; display: flex; justify-content: center; position: relative; z-index: 10;">
           <form id="searchForm" method="get" action="${pageContext.request.contextPath}/board/search">
               <div id="searchBox" style="position: relative; display: flex; align-items: center;">
-                  <input type="text" name="search" id="search" placeholder="ID, 상품명, 카테고리 입력" style="width: 450px; padding: 8px; padding-right: 35px; border: 2px solid red; border-radius: 3px; font-family: Pretendard JP, sans-serif;">
+                  <input type="text" name="search" id="search" placeholder="ID, 상품명, 카테고리 입력" style="width: 300px; padding: 8px; padding-right: 35px; border: 2px solid red; border-radius: 3px; font-family: Pretendard JP, sans-serif;">
                   <div id="search_imgbox" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
                       <i class="fas fa-search"></i> <!-- Font Awesome 돋보기 아이콘 -->
                   </div>
@@ -317,7 +317,6 @@
     </div>
 
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -346,4 +345,5 @@
         setTimeout(showSlides, 3000); // 3초마다 이미지가 체인지
     }
 </script>
+
 <!-- 부분-->

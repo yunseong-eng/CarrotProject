@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/register.css">
 <title>회원가입</title>
 </head>
@@ -104,9 +104,9 @@
 							<th class="label"><label for="email1">이메일 인증</label></th>
 							<td class="input"><input  type="email" id="email"
 								name="email" class="form-control" placeholder="이메일 입력" 
-								 autofocus style="width: 40% !important;">
+								 autofocus>
 								<input type="button" value="인증하기" class="btn-primary"
-									id="emailAuth" style="width: 10% !important;"><input type="text" id="authCode"
+									id="emailAuth"><input type="text" id="authCode"
 								name="authCode" class="form-control" placeholder="인증코드 입력"
 								maxlength="6" disabled="disabled" autofocus> <span id="emailAuthWarn"></span>
 						</td></tr>
