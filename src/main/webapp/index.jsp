@@ -346,5 +346,4 @@
         setTimeout(showSlides, 3000); // 3초마다 이미지가 체인지
     }
 </script>
-
 <!-- 부분-->
