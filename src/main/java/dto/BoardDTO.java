@@ -19,4 +19,5 @@ public class BoardDTO {
     private String shippingFee;     // 배송비 (무료, 유료)
     private String includes;        // 구성품 여부 (O, X)
     private String imageFileName;   // 이미지 파일 이름
+    private int isNotice;         // 공지사항 여부 (1: 공지사항, 0: 일반 글)
 }

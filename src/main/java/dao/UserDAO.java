@@ -28,4 +28,5 @@ public interface UserDAO {
 
     // 회원 삭제
     void deleteUser(String userId);
+    
 }

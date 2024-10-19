@@ -154,4 +154,13 @@ public class BoardController {
 
         return "redirect:/board/listForm?category=" + encodedCategory;
     }
+    
+    @GetMapping("/boards")
+    public String getBoardList(Model model) {
+        List<BoardDTO> fixedNotices = boardService.getFixedNotices(); // 공지사항 목록
+        List<BoardDTO> boardList = boardService.getAllBoardList(); // 일반 게시글 목록
+        model.addAttribute("fixedNotices", fixedNotices);
+        model.addAttribute("boardList", boardList);
+        return "board/boardList"; // 게시글 목록 페이지
+    }
 }

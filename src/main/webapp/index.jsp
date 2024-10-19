@@ -24,14 +24,25 @@
                   <dd><a href="#">마이페이지</a></dd>
                   <dd><a href="#">관심</a></dd>
                   <dd><a href="#">알림</a></dd> -->
-                  <c:if test="${user.userId == null}"> <!-- 세션이 없으면 로그인만 표시 -->
-                	<dd><a href="${pageContext.request.contextPath}/user/login">로그인</a></dd>
-                  </c:if>
-                  <c:if test="${user.userId != null}"> <!-- 사용자가 로그인한 상태 -->
-                  <dd><h6>[${user.userId }] 님</h6></dd>
-                  	<dd><a href="${pageContext.request.contextPath}/user/myinfo">마이페이지</a></dd>
-                  	<dd><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></dd>
-                  </c:if>
+                  <!-- 관리자 또는 사용자 로그인 상태에 따른 메뉴 표시 -->
+                <c:if test="${sessionScope.adminLogin == true}">
+                    <!-- 관리자일 경우 공지사항 및 회원정보 메뉴 표시 -->
+                    <dd><a href="${pageContext.request.contextPath}/admin/notices">공지사항</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/admin/users">회원정보</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/admin/logout">로그아웃</a></dd>
+                </c:if>
+
+                <c:if test="${sessionScope.adminLogin != true && sessionScope.userLogin == true}">
+                    <!-- 사용자 로그인 상태일 경우 -->
+                    <dd><h6>[${user.userId}] 님</h6></dd>
+                    <dd><a href="${pageContext.request.contextPath}/user/myinfo">마이페이지</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></dd>
+                </c:if>
+
+                <c:if test="${sessionScope.userLogin == null && sessionScope.adminLogin == null}">
+                    <!-- 세션이 없으면 로그인 메뉴만 표시 -->
+                    <dd><a href="${pageContext.request.contextPath}/user/login">로그인</a></dd>
+                </c:if>
             </dl>
 
             <dl class="topnav2">

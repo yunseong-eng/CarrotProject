@@ -5,13 +5,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/list.css">
-<title>${category} 게시판 목록</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/list.css">
+    <title>${category} 게시판 목록</title>
 </head>
 <body>
     <h3>${category} 게시글</h3>
 
-    <!-- 게시판 테이블 -->
+    <!-- 공지사항 목록 -->
+    <h3>공지사항</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성시간</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="notice" items="${noticeList}">
+                <tr>
+                    <td>
+                        <a class="title-link" href="${pageContext.request.contextPath}/board/detailForm/${notice.boardId}">
+                            ${notice.title}
+                        </a>
+                    </td>
+                    <td>${notice.userId}</td>
+                    <td><fmt:formatDate value="${notice.createTime}" pattern="yyyy-MM-dd HH:mm" /></td>
+                    <td><fmt:formatNumber value="${notice.views}" pattern="#,###"/></td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+
+    <hr/>
+
+    <!-- 게시판 테이블 (일반 게시글 목록) -->
+    <h3>${category} 게시글</h3>
     <table>
         <thead>
             <tr>

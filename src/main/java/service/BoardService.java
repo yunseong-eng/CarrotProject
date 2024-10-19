@@ -23,4 +23,10 @@ public interface BoardService {
 
     // 게시글 삭제
     void deleteBoard(int boardId);
+    
+    // 공지사항 등록
+    void addNotice(BoardDTO boardDTO);
+
+    // 공지사항 상단 고정 조회
+    List<BoardDTO> getFixedNotices();
 }

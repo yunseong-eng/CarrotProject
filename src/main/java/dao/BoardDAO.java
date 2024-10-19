@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Mapper
 public interface BoardDAO {
-    // 게시글 작성
+    // 게시글 작성 (공지사항 포함)
     void insertBoard(BoardDTO boardDTO);
 
     // 게시글 목록 조회 (카테고리별)
@@ -28,4 +28,7 @@ public interface BoardDAO {
 
     // 조회수 증가
     void increaseViews(int boardId);
+    
+    // 공지사항 상단 고정 목록 조회
+    List<BoardDTO> getFixedNotices();
 }

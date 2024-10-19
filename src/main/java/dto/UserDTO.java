@@ -15,7 +15,7 @@ public class UserDTO {
 	private String email; // 이메일
 	private boolean emailVerified; // 이메일 인증 여부
 	private String emailToken; // 이메일 인증 토큰 private
-	String role; // 권한 (USER, ADMIN)
+	private String role; // 권한 (USER, ADMIN)
 
 	private String tel1;
 	private String tel2;

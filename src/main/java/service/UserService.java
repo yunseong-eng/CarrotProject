@@ -26,4 +26,10 @@ public interface UserService {
 
     // 회원 삭제
     void deleteUser(String userId);
+    
+    // 관리자 인증 (관리자 권한 체크)
+    boolean authenticateAdmin(String userId, String password);
+
+    // 관리자 권한 체크
+    boolean isAdmin(String userId);
 }

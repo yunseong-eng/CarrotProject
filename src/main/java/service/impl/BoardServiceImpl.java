@@ -57,4 +57,15 @@ public class BoardServiceImpl implements BoardService {
     public void deleteBoard(int boardId) {
         boardDAO.deleteBoard(boardId);
     }
+    
+    @Override
+    public void addNotice(BoardDTO boardDTO) {
+        boardDTO.setIsNotice(1); // 공지사항으로 설정
+        boardDAO.insertBoard(boardDTO); // 공지사항 등록
+    }
+
+    @Override
+    public List<BoardDTO> getFixedNotices() {
+        return boardDAO.getFixedNotices(); // 공지사항 상단 고정 조회
+    }
 }
