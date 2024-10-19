@@ -38,7 +38,7 @@
     <!-- 오른쪽 섹션: 게시글 정보 -->
     <div class="right-section">
         <!-- 게시글 제목 -->
-        <h1>${board.title}</h1>
+        <h2>${board.title}</h2>
 
         <!-- 조회수 -->
         <div class="views">
