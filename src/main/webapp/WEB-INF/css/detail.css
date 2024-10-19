@@ -22,14 +22,16 @@ body {
 }
 
 .left-section img {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    object-fit: contain;
+    width: 450px; /* 고정된 너비 */
+    height: 450px; /* 고정된 높이 */
+    object-fit: cover;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05); /* 사진에 그림자 효과 추가 */
+    border-radius: 5px; /* 그림자가 더 부드럽게 보이도록 약간의 둥근 모서리 */
 }
 
 .right-section {
     width: 55%;
+    top: 20px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -37,21 +39,21 @@ body {
 
 .right-section h1 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* 제목과 아래 내용 간의 간격을 살짝 더 벌림 */
     padding-right: 100px;
 }
 
 .views {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px; /* 조금 아래로 내림 */
+    right: 150px; /* 오른쪽에서 더 가까이 왼쪽으로 이동 */
     font-size: 14px;
     display: flex;
     align-items: center;
 }
 
 .views i {
-    margin-right: 5px;
+    margin-right: 7px; /* 아이콘과 조회수 사이 간격 */
 }
 
 .details {
@@ -73,11 +75,13 @@ body {
 .status {
     display: flex;
     align-items: center;
+    color: #000000;
 }
 
 .info {
     display: flex;
     flex-direction: column;
+    color: #000000;
 }
 
 .info p, .status p {
@@ -85,17 +89,17 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    color: black;
+    color: #000000;
 }
 
 .info p strong, .status strong {
-    color: #5a3d2b;
+    color: #6e3b3b;
     margin-right: 10px;
 }
 
 .info p strong::before, .status strong::before {
     content: "• ";
-    color: #5a3d2b;
+    color: #6e3b3b;
     margin-right: 5px;
 }
 
@@ -121,40 +125,34 @@ body {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 100px; /* 상단과의 간격을 주기 위해 추가 */
 }
 
-.comment-list {
-    margin-top: 20px;
+/* 댓글 입력창과 목록을 가로로 배치 */
+.comment-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.comment {
-    padding: 10px 0;
+.comment-form {
+    width: 30%; /* 입력창의 너비 */
+    margin-right: 200px; /* 입력창과 댓글 목록 간의 간격을 넓힘 */
 }
 
-.reply-list {
-    margin-top: 10px;
-}
-
-.reply {
-    margin-left: 30px;
-    padding-left: 10px;
-}
-
-.comment-form, .reply-form {
-    margin-top: 10px;
-}
-
-textarea {
+.comment-form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     resize: none;
     background-color: white;
+    font-size: 14px;
+    margin-bottom: 10px; /* 입력창과 댓글 달기 버튼 사이 간격 줄임 */
 }
 
 button {
-    padding: 10px 20px;
+    padding: 8px 15px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -166,28 +164,110 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* 댓글 목록 및 대댓글 */
+.comment-list {
+    width: 55%; /* 댓글 목록의 너비 */
+    margin-top: -80px; /* 댓글 목록을 위로 조금 더 올림 */
+}
+
+/* 댓글에 위아래 선 추가 */
+.comment {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-top: 2px solid #ddd; /* 위쪽 선 2px */
+    border-bottom: 2px solid #ddd; /* 아래쪽 선 2px */
+    padding-left: 10px;
+    margin-top: 10px;
+    width: 70%; /* 댓글 너비를 더 줄여 선 길이를 줄임 */
+}
+
+/* 대댓글 리스트 */
+.reply-list {
+    margin-top: 10px;
+}
+
+.reply {
+    margin-left: 30px;
+    padding-left: 10px;
+}
+
 /* 답글 달기 버튼 */
 .reply-toggle {
-    font-size: 14px;
-    color: #007bff;
+    font-size: 12px; /* 글씨 크기를 줄임 */
+    color: #000000; /* 글씨 색을 쨍한 검정으로 변경 */
     cursor: pointer;
     text-decoration: underline;
+    font-weight: 600; /* 글씨 굵기를 조금 늘림 */
+    margin-top: -5px; /* 위치를 위로 조금 올림 */
 }
 
 .reply-toggle:hover {
-    color: #0056b3;
+    color: #000000; /* 호버 시에도 검정색 유지 */
 }
 
 /* 댓글 작성 버튼을 글씨로 표시 */
 .comment-form button, .reply-form button {
     background: none;
-    color: #007bff;
+    color: #000000; /* 글씨 색을 쨍한 검정으로 변경 */
     font-size: 14px;
+    font-weight: 600; /* 글씨 굵기를 조금 늘림 */
     text-decoration: underline;
     cursor: pointer;
+    margin-top: -10px; /* 댓글 달기 버튼을 더 위로 올림 */
 }
 
 .comment-form button:hover, .reply-form button:hover {
-    color: #0056b3;
+    color: #000000; /* 호버 시에도 검정색 유지 */
     text-decoration: underline;
+}
+
+/* 수정 및 삭제 버튼 */
+.edit-delete-buttons {
+    position: absolute; /* 위치를 자유롭게 조정하기 위해 절대 위치 사용 */
+    top: 350px; /* 원하는 위치로 더 위로 이동 */
+    right: 100px; /* 더 왼쪽으로 이동 */
+    display: flex;
+    gap: 20px; /* 수정, 삭제 버튼 사이의 간격 */
+}
+
+/* 수정 및 삭제 버튼 */
+.edit-delete-buttons {
+    position: absolute; /* 위치를 자유롭게 조정 */
+    top: 550px; /* 더 아래로 이동 */
+    right: 550px; /* 더 왼쪽으로 이동 */
+    display: flex;
+    gap: 20px; /* 수정, 삭제 버튼 사이의 간격 */
+}
+
+/* 부모 요소에 relative 설정 */
+.info {
+    position: relative; /* 부모 요소를 기준으로 절대 위치 조정 */
+}
+
+/* 수정 버튼 크기 줄이기 */
+.edit-delete-buttons a {
+    padding:5px 15px; /* 수정 버튼 크기 줄임 */
+    background-color: #f9c66a; /* 배경 */
+    color: black; /* 흰색 텍스트 */
+    border: none; /* 테두리 없앰 */
+    border-radius: 5px; /* 버튼에 약간의 둥근 모서리 추가 */
+    cursor: pointer;
+    text-decoration: none; /* 링크 버튼의 밑줄 없앰 */
+    font-size: 14px; /* 글씨 크기 */
+}
+
+/* 삭제 버튼 */
+.edit-delete-buttons button {
+    padding: 7px 17px; /* 삭제 버튼 크기 유지 */
+    background-color: #f9c66a; /* 배경 */
+    color: black; /* 흰색 텍스트 */
+    border: none; /* 테두리 없앰 */
+    border-radius: 5px; /* 버튼에 약간의 둥근 모서리 추가 */
+    cursor: pointer;
+}
+
+/* 호버 효과 */
+.edit-delete-buttons a:hover, 
+.edit-delete-buttons button:hover {
+    background-color: #f4b44a; /* 호버 시 더 어두운 파란색 */
 }

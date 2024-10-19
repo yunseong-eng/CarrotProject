@@ -131,9 +131,22 @@ public class BoardController {
         UserDTO currentUser = (UserDTO) session.getAttribute("user");
         if (currentUser != null) {
             model.addAttribute("currentUserId", currentUser.getUserId());
+            
+            // 로그인된 사용자가 게시글 작성자와 동일한지 여부를 JSP에 전달
+            boolean isOwner = currentUser.getUserId().equals(boardDTO.getUserId());
+            model.addAttribute("isOwner", isOwner);
         }
 
         return "/board/detailForm";  // 상세페이지로 이동
+    }
+    
+    // 검색기능
+    @GetMapping("/search")
+    public String searchBoards(@RequestParam String search, Model model) {
+        List<BoardDTO> searchResults = boardService.searchBoards(search);
+        model.addAttribute("boardList", searchResults);
+        model.addAttribute("searchKeyword", search);
+        return "/board/listForm";
     }
 
     // 게시글 수정 폼 이동
@@ -147,6 +160,7 @@ public class BoardController {
     // 게시글 삭제 처리
     @PostMapping("/delete")
     public String deleteBoard(@RequestParam int boardId, @RequestParam String category) {
+        // 게시글을 삭제하기 전에 댓글 삭제 처리
         boardService.deleteBoard(boardId);
 
         // 카테고리 값을 URL 인코딩 처리

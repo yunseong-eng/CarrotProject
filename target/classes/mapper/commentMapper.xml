@@ -27,14 +27,4 @@
 	    SELECT * FROM post_comment WHERE parentComment = #{commentId} ORDER BY createTime ASC
 	</select>
 
-    <!-- 댓글 수정 -->
-    <update id="updateComment" parameterType="dto.CommentDTO">
-        UPDATE post_comment SET content = #{content} WHERE commentId = #{commentId}
-    </update>
-
-    <!-- 댓글 삭제 -->
-    <delete id="deleteComment" parameterType="int">
-        DELETE FROM post_comment WHERE commentId = #{commentId}
-    </delete>
-
 </mapper>

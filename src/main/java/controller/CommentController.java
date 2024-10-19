@@ -41,37 +41,4 @@ public class CommentController {
         // 댓글 작성 후 다시 해당 게시글의 상세 페이지로 리다이렉트
         return "redirect:/board/detailForm/" + commentDTO.getBoardId();
     }
-
-    // 댓글 수정 처리
-    @PostMapping("/update")
-    public String updateComment(@ModelAttribute CommentDTO commentDTO, HttpSession session) {
-        // 로그인된 사용자 정보 가져오기
-        UserDTO loggedInUser = (UserDTO) session.getAttribute("user");
-
-        // 세션에 로그인된 사용자가 없을 경우 로그인 페이지로 리다이렉트
-        if (loggedInUser == null) {
-            return "redirect:/user/login";
-        }
-
-        commentDTO.setUserId(loggedInUser.getUserId());
-        commentService.updateComment(commentDTO);
-
-        return "redirect:/board/detailForm/" + commentDTO.getBoardId();
-    }
-
-    // 댓글 삭제 처리
-    @PostMapping("/delete")
-    public String deleteComment(@RequestParam int commentId, @RequestParam int boardId, HttpSession session) {
-        // 로그인된 사용자 정보 가져오기
-        UserDTO loggedInUser = (UserDTO) session.getAttribute("user");
-
-        // 세션에 로그인된 사용자가 없을 경우 로그인 페이지로 리다이렉트
-        if (loggedInUser == null) {
-            return "redirect:/user/login";
-        }
-
-        commentService.deleteComment(commentId);
-
-        return "redirect:/board/detailForm/" + boardId;
-    }
 }

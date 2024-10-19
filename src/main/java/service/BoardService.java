@@ -23,4 +23,8 @@ public interface BoardService {
 
     // 게시글 삭제
     void deleteBoard(int boardId);
+    
+    // 검색 기능
+    List<BoardDTO> searchBoards(String searchKeyword);
+
 }

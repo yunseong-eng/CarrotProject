@@ -12,7 +12,7 @@
 <body>
 	<div id="register-jsp" class="register-jsp">
 		<div id="right">
-			<a href="/carrot/"> <img src="../image/kream.png" width="100"
+			<a href="/carrot/"> <img src="../image/carrotLogo.jpg" width="100"
 				height="50" alt="carrot이동">
 			</a>
 			<div id="container">
