@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div id="delete-jsp">
-		<a href="/carrot/"> <img src="../image/kream.png" width="100"
+		<a href="/carrot/"> <img src="../image/carrotLogo.jpg" width="100"
 			height="50" alt="carrot이동">
 		</a>
 		<div class="container">

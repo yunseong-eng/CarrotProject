@@ -9,7 +9,7 @@
 <title>${category} 게시판 목록</title>
 </head>
 <body>
-    <h3>${category} 게시글</h3>
+    <h3>${category} 게시판</h3>
 
     <!-- 게시판 테이블 -->
     <table>

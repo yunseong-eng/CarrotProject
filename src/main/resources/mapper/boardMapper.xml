@@ -37,12 +37,34 @@
     <update id="increaseViews" parameterType="int">
         UPDATE post_board SET views = views + 1 WHERE boardId = #{boardId}
     </update>
+    
+    <!-- 게시글 검색 (카테고리, 제목, 작성자, 구매/판매) -->
+    <select id="searchBoards" parameterType="string" resultType="dto.BoardDTO">
+        SELECT * 
+        FROM post_board
+        WHERE 
+            (title LIKE CONCAT('%', #{searchKeyword}, '%')
+            OR userId LIKE CONCAT('%', #{searchKeyword}, '%')
+            OR category LIKE CONCAT('%', #{searchKeyword}, '%')
+            OR postType LIKE CONCAT('%', #{searchKeyword}, '%'))
+        ORDER BY createTime DESC
+    </select>
 
     <!-- 게시글 수정 -->
     <update id="updateBoard" parameterType="dto.BoardDTO">
         UPDATE post_board SET title = #{title}, content = #{content}, category = #{category}, postType = #{postType},
         shippingFee = #{shippingFee}, includes = #{includes}, imageFileName = #{imageFileName} WHERE boardId = #{boardId}
     </update>
+
+    <!-- 자식 댓글(대댓글) 삭제 -->
+    <delete id="deleteChildCommentsByBoardId" parameterType="int">
+        DELETE FROM post_comment WHERE parentComment IS NOT NULL AND boardId = #{boardId}
+    </delete>
+
+    <!-- 부모 댓글 삭제 -->
+    <delete id="deleteParentCommentsByBoardId" parameterType="int">
+        DELETE FROM post_comment WHERE parentComment IS NULL AND boardId = #{boardId}
+    </delete>
 
     <!-- 게시글 삭제 -->
     <delete id="deleteBoard" parameterType="int">
