@@ -7,31 +7,15 @@ body {
     font-size: 15px;
 }
 
-/* 카테고리 선택 섹션 */
-#category-section {
-    margin: 20px 0;
-}
-
-#category-section a {
-    margin-right: 15px;
-    text-decoration: none;
-    font-size: 14px;
-    color: black;
-}
-
-#category-section a:hover {
-    color: blue;
-}
-
 /* 게시글 목록 테이블 스타일 */
 table {
-    width: 70%; /* 게시판 테이블 너비를 줄임 */
-    max-width: 800px; /* 최대 너비 고정 */
+    width: 75%; /* 게시판 테이블 너비를 살짝 넓힘 */
+    max-width: 900px; /* 최대 너비를 넓힘 */
     border-collapse: collapse;
-    table-layout: fixed;
     font-size: 13px;
-    margin: 0 auto; /* 테이블을 페이지 중앙에 배치 */
-    margin-top: 30px;
+    margin: 30px auto 0 auto; /* 테이블을 페이지 중앙에 배치 */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05); /* 테이블의 그림자 효과를 줄임 */
+    border: 1px solid #ddd; /* 테두리를 네모모양으로 */
 }
 
 th, td {
@@ -49,7 +33,7 @@ th:nth-child(1) {
 }
 
 th:nth-child(2) {
-    width: 40%;
+    width: 45%; /* 제목 열을 더 넓게 */
 }
 
 th:nth-child(3) {
@@ -61,7 +45,7 @@ th:nth-child(4) {
 }
 
 th:nth-child(5) {
-    width: 5%;
+    width: 10%; /* 조회수 열을 더 넓게 */
 }
 
 .sale {
@@ -91,26 +75,34 @@ h3 {
     font-size: 18px;
     margin-top: 50px;
     font-weight: bold;
-    max-width: 800px;
+    max-width: 900px; /* 최대 너비 고정 */
     margin: 50px auto 10px auto;
 }
 
-/* 글 작성 버튼 스타일: 표 아래쪽 중앙 배치 */
-button {
-    font-size: 20px;
-    background-color: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-    padding: 5px 10px;
-    display: block;
-    margin: 20px auto; /* 기본 중앙 정렬 */
+/* 글 작성 버튼 스타일 */
+form {
+    max-width: 900px;
+    margin: 0 auto;
     position: relative;
-    bottom: 0;
-    max-width: 800px;
-    margin-left: 300px; /* 버튼을 오른쪽으로 약간 이동 */
+}
+
+/* 버튼을 우측 하단에 배치 */
+button {
+    font-size: 14px; /* 글씨 크기 줄임 */
+    font-weight: bold; /* 글씨 진하게 */
+    background-color: #f9c66a; /* 연한 주황색 배경 */
+    color: black; /* 글씨 색을 쨍한 검정으로 */
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 8px 15px; /* 버튼 크기 줄임 */
+    position: absolute; /* 버튼을 우측 하단에 배치 */
+    right: 0;
+    bottom: -40px; /* 버튼을 테이블 하단 밖으로 살짝 배치 */
+    border-bottom: none; /* 밑선 제거 */
+    box-shadow: none; /* 그림자 제거 */
 }
 
 button:hover {
+    background-color: #f4b44a; /* 호버 시 조금 더 진한 주황색 */
     text-decoration: underline;
 }

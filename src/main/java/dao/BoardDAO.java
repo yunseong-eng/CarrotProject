@@ -25,7 +25,16 @@ public interface BoardDAO {
 
     // 게시글 삭제
     void deleteBoard(int boardId);
+    
+    // 자식 댓글 삭제 (게시글 삭제 전에 자식 댓글 먼저 삭제)
+    void deleteChildCommentsByBoardId(int boardId);
+
+    // 부모 댓글 삭제 (자식 댓글 삭제 후 부모 댓글 삭제)
+    void deleteParentCommentsByBoardId(int boardId);
 
     // 조회수 증가
     void increaseViews(int boardId);
+    
+    // 검색 기능 (제목, 작성자, 카테고리 검색)
+    List<BoardDTO> searchBoards(String searchKeyword);
 }

@@ -35,15 +35,6 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public void updateComment(CommentDTO commentDTO) {
-        commentDAO.updateComment(commentDTO);
-    }
-
-    @Override
-    public void deleteComment(int commentId) {
-        commentDAO.deleteComment(commentId);
-    }
-    @Override
     public void writeReply(CommentDTO commentDTO) {
         commentDAO.insertReply(commentDTO);  // 대댓글 저장
     }

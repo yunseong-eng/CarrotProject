@@ -108,7 +108,7 @@ $(function() {
 			        formDataArray.forEach(function(item) {
 		            console.log(item.name + ': ' + item.value);
 			        });
-        			alert('register.js 가입완료');
+        			alert('가입완료');
 					location.href = '/carrot';
             },
                 error: function(e) {
