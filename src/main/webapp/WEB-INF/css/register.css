@@ -103,8 +103,6 @@ label {
 	font-weight: bold;
 }
 
-
-
 .input-email {
 	width: 30%;
 }
@@ -117,4 +115,40 @@ input[type="button"] {
 
 input[type="button"]:hover {
 	background-color: #0056b3;
+}
+
+/*태블릿 (화면너비 768px 이하)*/
+@media ( max-width : 768px) {
+	#register-jsp {
+		width: 90%;
+		margin: 20px auto;
+		padding: 15px;
+	}
+	input[type="text"], input[type="password"] {
+		width: 100%;
+	}
+	#tel2, #tel3, #email1, #email2 {
+		width: 25%;
+	}
+	select {
+		width: 25%;
+	}
+	input[type="email"] {
+		width: 68%;
+	}
+	table {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+	}
+	th.label, td.input {
+		width: 100%;
+		text-align: left;
+	}
+	button {
+		width: 100%;
+	}
+	.btn-primary {
+		width: 20%
+	}
 }

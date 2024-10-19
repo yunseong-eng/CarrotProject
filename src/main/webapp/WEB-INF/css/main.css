@@ -1,16 +1,6 @@
 /* '나눔고딕체'이고, 웹 폰트를 활용 */
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-/*전체 크기 가로 폭 지정 및 가운데 정렬*/
-#wrap {
-    width: 1080px;
-    margin: 0 auto;
-}
-#login{
-    width: 720px;
-    margin: 0 auto;
-}
-
 /*header 시작*/
 /*어떤 영역에 'position:absolute'를 지정할 경우에는,*/
 /*그 영역을 감싸는 부분에 반드시 'position:relative'를 지정한다.*/
@@ -19,16 +9,26 @@
 /*헤더부분 고정 CSS*/
 header {
   /*  border-bottom: 1px solid lightslategray;*/
-    width: 1080px;
+    width: 100%;
     height: 120px;
     position: sticky;
     top: 0; /* 도달했을때 고정시킬 위치 */
     padding: 5px;
     background-color: white;
-    z-index: 10;
+    z-index: 9999;
     font-family: "Pretendard JP", serif;
 }
 
+.logo {
+    width: 8%;
+}
+
+.logo a {
+    /*overflow: hidden;*/
+    /*    width: 90px;
+        height: 40px;*/
+    text-indent: -9999em; /*양수면 들여쓰기 음수면 내어쓰기*/
+}
 /*-------------------- 고객센터 ~ 로그인 --------------------*/
 .topnav {
     position: absolute;
@@ -136,10 +136,10 @@ header {
 
 /*-------------------- 추천 ~ 이벤트 --------------------*/
 .mainnav {
-   	padding-left: 50px;
+   	padding-left: 40px;
     position: absolute;
     left: -20px;
-    top: 80px;
+    top: 90px;
     background-color: white;
 }
 
@@ -176,47 +176,6 @@ header {
 /*-------------------- 추천 ~ 이벤트 --------------------*/
 /*header 끝*/
 
-
-/*.snekerDIV {
-    !*  display: inline-flex;*!
-    justify-content: center;
-    display: inline-flex;
-    width: 100%;
-}
-
-.snekers {
-    width: 150px;
-}*/
-
-/*-------------------- 슬라이드 --------------------*/
-/*.slidesbackground {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    justify-content: center;
-}
-.slideshow-image {
-    border-radius: 2%;
-    width: 100%; !*이미지가 부모 컨테이너 너비를 100% 사용*!
-    max-width: 100%; !*이미지가 컨테이너의 최대 너비에 맞게 조정*!
-    height: 60vh; !*세로 크기는 가로 크기에 비례해서 조정*!
-    overflow: hidden;
-}
-
-.mySlides {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slideshow-container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin: auto;
-}*/
-
 div .mySlides img {
     object-fit: contain; /*이미지의 종횡비 유지*/
     width: 100%;
@@ -244,7 +203,7 @@ div .mySlides img {
 .layout {
     display: inline-block;
     margin: 5px;
-    width: 25.6vh;
+    width: calc(20% - 10px);
     text-align: center;
 }
 
@@ -273,8 +232,6 @@ div .mySlides img {
 }
 
 .item {
-/*    display: inline-block;
-    width: 15em;*/
     width: calc(20% - 10px); /* 각 아이템의 너비를 5개로 맞추기 위해 20%로 설정 */
     margin-bottom: 10px;  /* 아이템 간의 아래쪽 간격 */
 }
@@ -369,14 +326,138 @@ div .mySlides img {
     padding: 0.5em 0;
 }
 
-/*
-[형식]
-font : 폰트 두께, 폰트 크기/ line-height 서체
-*/
-
-
 .category {
     display: inline-block;
     font-size: 2em;
     font-weight: bold;
 }
+
+/* 검색창 스타일 */
+.searchForm {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	margin-top: -50px !important; /* 검색창을 위로 올리기 (다른 CSS 영향 방지) */
+	width:420px;
+}
+
+#searchBox {
+	position: relative;
+	width: 60%; /* 검색 박스 전체 너비 설정 */
+}
+
+#search {
+	padding: 8px;
+	padding-right: 35px; /* 돋보기 아이콘을 위한 오른쪽 패딩 */
+	font-size: 16px;
+	width: 40%;
+	border: 2px solid red;
+	border-radius: 3px;
+	font-family: 'Pretendard JP', sans-serif; /* 헤더와 동일한 폰트 적용 */
+}
+
+#search_imgbox {
+	position: absolute;
+	right: 10px; /* 돋보기를 오른쪽에 위치 */
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 16px;
+	color: black; /* 아이콘 색상 */
+}
+
+/*                   반응형 웹                      */
+body {
+	overflow-x: auto;
+}
+
+#wrap {
+	width: 100%; /* 기본 컨텐츠에 대해 100% 너비를 사용 */
+	max-width: 1080px; /* 1080px 이상의 화면에 대해서는 제한 */
+}
+
+/* @media only screen and (min-width:300px) and (max-width:480px) {
+	.container {
+		width: 100%;
+		height: auto;
+	}
+} */
+
+/*모바일 (화면 너비 480px 이하)*/
+@media ( max-width : 480px) {
+	#wrap {
+		display: flex;
+		padding: 10px;
+		flex-direction: column;
+	}
+}
+/*태블릿 (화면너비 768px 이하)*/
+@media ( max-width : 768px) {
+	#wrap {
+		display: flex;
+		flex-direction: column;
+	}
+	header {
+		width: 100%;
+		height: 120px;
+		position: sticky;
+		top: 0; /* 도달했을때 고정시킬 위치 */
+		padding: 5px;
+		z-index: 9999;
+		font-family: "Pretendard JP", serif;
+	}
+	.layout {
+		display: inline-block;
+		margin: 5px;
+		width: calc(50% - 10px);
+		text-align: center;
+	}
+	.itemcenter {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap; /*줄이 넘치면 다음줄로*/
+	}
+	.item {
+		width: calc(20% - 10px); /* 각 아이템의 너비를 5개로 맞추기 위해 20%로 설정 */
+		margin-bottom: 10px; /* 아이템 간의 아래쪽 간격 */
+	}
+	.logo {
+    width: 10%;
+    }
+	
+	
+	/* 검색창 스타일 */
+	.searchForm {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		margin-top: -50px !important; /* 검색창을 위로 올리기 (다른 CSS 영향 방지) */
+		width:300px;
+	}
+	
+	#searchBox {
+		position: relative;
+		width: 10%; /* 검색 박스 전체 너비 설정 */
+	}
+	
+	#search {
+		padding: 8px;
+		padding-right: 35px; /* 돋보기 아이콘을 위한 오른쪽 패딩 */
+		font-size: 16px;
+		width: 10%;
+		border: 2px solid red;
+		border-radius: 3px;
+		font-family: 'Pretendard JP', sans-serif; /* 헤더와 동일한 폰트 적용 */
+	}
+	
+	#search_imgbox {
+		position: absolute;
+		right: 10px; /* 돋보기를 오른쪽에 위치 */
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 16px;
+		color: black; /* 아이콘 색상 */
+	}
+
+}
+
+/*                   반응형 웹                      */

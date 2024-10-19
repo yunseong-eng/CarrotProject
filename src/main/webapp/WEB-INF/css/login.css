@@ -76,8 +76,8 @@ button:hover {
 }
 
 button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+	background-color: #ccc;
+	cursor: not-allowed;
 }
 
 tr {
@@ -96,4 +96,27 @@ tr:last-child {
 	color: red;
 	font-size: 12px;
 	margin-top: 5px;
+}
+
+@media ( max-width : 768px) {
+	#login-jsp {
+		width: 90%;
+		margin: 20px auto;
+		padding: 15px;
+	}
+	input[type="text"], input[type="password"] {
+		width: 100%;
+	}
+	table {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+	}
+	th.label, td.input {
+		width: 100%;
+		text-align: left;
+	}
+	button {
+		width: 100%;
+	}
 }
