@@ -31,4 +31,7 @@ public interface BoardDAO {
     
     // 공지사항 상단 고정 목록 조회
     List<BoardDTO> getFixedNotices();
+    
+    // 공지사항 등록
+    void insertNotice(int boardId);
 }

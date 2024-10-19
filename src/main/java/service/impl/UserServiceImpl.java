@@ -82,27 +82,22 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 	
-	@Override
+	// 관리자 인증 메서드
+    @Override
     public boolean authenticateAdmin(String userId, String password) {
-        // DB에서 사용자 정보 조회
         UserDTO user = userDAO.loginUser(userId);
+        // 사용자 비밀번호가 일치하고, 역할이 ADMIN인 경우에 true 반환
         if (user != null && user.getPassword().equals(password) && "ADMIN".equals(user.getRole())) {
-            // 사용자 권한이 ADMIN인 경우에만 true 반환
             return true;
         }
         return false;
     }
 
-	@Override
-	public boolean isAdmin(String userId) {
-	    // DB에서 해당 userId로 사용자 정보를 가져옴
-	    UserDTO user = userDAO.getUserInfo(userId);
-
-	    // 사용자 정보가 null이 아니고, 해당 사용자가 관리자인 경우 true 반환
-	    if (user != null && "ADMIN".equals(user.getRole())) {
-	        return true;
-	    }
-	    // 관리자가 아닌 경우 false 반환
-	    return false;
-	}
+    // 관리자인지 확인하는 메서드
+    @Override
+    public boolean isAdmin(String userId) {
+        UserDTO user = userDAO.getUserInfo(userId);
+        // 사용자 역할이 ADMIN이면 true 반환
+        return user != null && "ADMIN".equals(user.getRole());
+    }
 }
