@@ -11,6 +11,7 @@
 <body>
 <div class="board-container">
     <h3>${category} 게시판</h3>
+
     <!-- 게시판 테이블 -->
     <table>
         <thead>
