@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" href="./image/carrotLogo.png" type="image/png">
+<link rel="icon" href="/image/carrotLogo.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>carrot | 중고거래 FLEX</title>
 <link rel="stylesheet"
@@ -105,7 +105,7 @@
 			<!--header-->
 		</header>
 
-		<span class="slideshow-container">
+		<%-- 		<span class="slideshow-container">
 			<div class="slidesbackground">
 				<div class="mySlides fade">
 					<img src="${pageContext.request.contextPath}/image/1.webp"
@@ -168,12 +168,36 @@
 						class="slideshow-image">
 				</div>
 			</div>
-		</span><br> <br> <br>
+		</span> --%>
+		<span class="slideshow-container">
+			<div class="slidesbackground">
+				<div class="mySlides fade">
+					<img src="${pageContext.request.contextPath}/image/5.png"
+						class="slideshow-image">
+				</div>
+				<div class="mySlides fade">
+					<img src="${pageContext.request.contextPath}/image/1.png"
+						class="slideshow-image">
+				</div>
+				<div class="mySlides fade">
+					<img src="${pageContext.request.contextPath}/image/2.png"
+						class="slideshow-image">
+				</div>
+				<div class="mySlides fade">
+					<img src="${pageContext.request.contextPath}/image/3.png"
+						class="slideshow-image">
+				</div>
+				<div class="mySlides fade">
+					<img src="${pageContext.request.contextPath}/image/4.png"
+						class="slideshow-image">
+				</div>
+			</div>
+		</span> <br> <br> <br>
 		<div class="itemcenter">
 			<div class="layout">
 				<img src="${pageContext.request.contextPath}/image/item1.webp"
 					alt="item1">
-				<dd>크림 드로우</dd>
+				<dd>Carrot Draw</dd>
 			</div>
 			<div class="layout">
 				<img src="${pageContext.request.contextPath}/image/item2.webp"
