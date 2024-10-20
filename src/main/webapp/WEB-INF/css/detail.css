@@ -127,7 +127,7 @@ body {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px; /* 상단과의 간격을 주기 위해 추가 */
+    margin-top: 200px; /* 상단과의 간격을 주기 위해 추가 */
 }
 
 /* 댓글 입력창과 목록을 가로로 배치 */

@@ -95,11 +95,6 @@ header {
 }
 
 /* 헤더 검색창 및 카테고리 메뉴 간의 z-index 설정 */
-#header {
-    position: relative;
-    z-index: 5; /* 카테고리 메뉴보다 아래 */
-}
-
 /* 검색창 스타일 */
 .searchForm {
     display: flex;
