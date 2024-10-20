@@ -1,0 +1,414 @@
+/* '나눔고딕체'이고, 웹 폰트를 활용 */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/*전체 크기 가로 폭 지정 및 가운데 정렬*/
+#wrap {
+	width: 1080px;
+	margin: 0 auto;
+}
+
+#login {
+	width: 720px;
+	margin: 0 auto;
+}
+
+/*header 시작*/
+/*어떤 영역에 'position:absolute'를 지정할 경우에는,*/
+/*그 영역을 감싸는 부분에 반드시 'position:relative'를 지정한다.*/
+/*그 상위 영역이 'absolute'위치의 기준이 된다.*/
+
+/*헤더부분 고정 CSS*/
+header {
+	/*  border-bottom: 1px solid lightslategray;*/
+	width: 1080px;
+	height: 120px;
+	position: sticky;
+	top: 0; /* 도달했을때 고정시킬 위치 */
+	padding: 5px;
+	background-color: white;
+	z-index: 10;
+	font-family: "Pretendard JP", serif;
+}
+
+.logo {
+	width: 8%;
+}
+
+.logo a {
+	/*overflow: hidden;*/
+	/*    width: 90px;
+        height: 40px;*/
+	text-indent: -9999em; /*양수면 들여쓰기 음수면 내어쓰기*/
+}
+
+/*-------------------- 고객센터 ~ 로그인 --------------------*/
+.topnav {
+	position: absolute;
+	right: 0; /*오른쪽에서 5px 띄우기. 없으면 왼쪽으로감*/
+	top: 0; /* 0으로 안주면 한참 아래로 내려감 기본값이 0이 아닌듯 */
+	height: 30px;
+	margin: 3px;
+}
+
+.topnav dd {
+	float: left;
+	padding-right: 5px; /*요소의 오른쪽 내부 공간 추가*/
+	margin-right: 15px; /*요소 사이에 공간을 추가*/
+}
+
+.topnav dd:last-child {
+	padding-right: 0;
+	margin-right: 0;
+	background: none;
+}
+
+.topnav dd a { /*고객센터 ~ 로그인 글씨체, 폰트*/
+	display: inline-grid;
+	text-align: left;
+	padding: 0 1px;
+	background-color: white;
+	color: dimgray;
+	/*font: 11px 'Pretendard JP', sans-serif;*/
+	font: 11px 'Pretendard JP' !important;
+	font-weight: bold;
+	text-transform: uppercase; /*대문자로 나와라*/
+	text-decoration: none;
+}
+
+/*-------------------- 고객센터 ~ 로그인 --------------------*/
+
+/*-------------------- HOME ~ 돋보기 --------------------*/
+.topnav2 { /*위치*/
+	position: absolute;
+	right: 0;
+	top: 30px;
+}
+
+.topnav2 dd { /*dd 위치*/
+	float: left;
+	padding: 10px 10px 10px 10px;
+}
+
+.topnav2 dd a { /*HOME ~ 돋보기, 폰트*/
+	display: inline-block;
+	/*    padding: 10px 10px 10px 10px;*/
+	background-color: white;
+	color: dimgray;
+	/*   font: 18px 'Pretendard JP', sans-serif;*/
+	font: 18px 'Pretendard JP';
+	text-transform: uppercase; /*대문자로 나와라*/
+	text-decoration: none;
+}
+
+.topnav2 dd a:hover {
+	font-weight: bold;
+	color: #ddbbdd;
+	background-color: #cceeee;
+}
+
+/*-------------------- HOME ~ 돋보기 --------------------*/
+
+/*-------------------- 추천 ~ 이벤트 --------------------*/
+.mainnav {
+	padding-left: 40px;
+	position: absolute;
+	left: -20px;
+	top: 90px;
+	background-color: white;
+}
+
+.mainnav:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.mainnav li {
+	list-style-type: none; /* 불릿 포인트 제거 */
+	/* width:60px; */
+	top: 100px;
+	float: left;
+}
+
+.mainnav li a {
+	display: inline-block;
+	padding: 0 15px;
+	background-color: white;
+	color: dimgray;
+	font: bold 16px/30px 'Nanum Gothic', sans-serif;
+	text-transform: uppercase; /*대문자로 나와라*/
+	text-decoration: none;
+}
+
+.mainnav li a:hover {
+	color: #ddbbdd;
+	background-color: #cceeee;
+}
+/*-------------------- 추천 ~ 이벤트 --------------------*/
+/*header 끝*/
+div .mySlides img {
+	object-fit: contain; /*이미지의 종횡비 유지*/
+	width: 100%;
+	max-width: 100%;
+	/*height: 60vh; !*이미지 높이를 화면 %에 맞게 조정*!*/
+	/*box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);*/
+}
+
+.fade {
+	animation-name: fade;
+	animation-duration: 3.0s; /*애니메이션 유지시간*/
+}
+
+@
+keyframes fade {from { opacity:0.7; /*투명도 0 ~ 1까지*/
+	
+}
+
+to {
+	opacity: 1;
+}
+
+}
+/*-------------------- 슬라이드 --------------------*/
+
+/*-------------------- 레이아웃 --------------------*/
+.layout {
+	display: inline-block;
+	margin: 5px;
+	width: calc(20% - 10px);
+	text-align: center;
+}
+
+.layout img {
+	border-radius: 1.5em;
+	object-fit: contain;
+	width: 100%;
+	max-width: 100%;
+	display: inline-block;
+}
+
+.layout dd {
+	text-align: center;
+	font-size: 13px;
+	font-family: "Pretendard JP";
+}
+/*-------------------- 레이아웃 --------------------*/
+
+/*-------------------- item --------------------*/
+
+/*아이템창 5개 꽉 채워줌*/
+.itemcenter {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap; /*줄이 넘치면 다음줄로*/
+}
+
+.item {
+	/*    display: inline-block;
+    width: 15em;*/
+	width: calc(20% - 10px); /* 각 아이템의 너비를 5개로 맞추기 위해 20%로 설정 */
+	margin-bottom: 10px; /* 아이템 간의 아래쪽 간격 */
+}
+
+.item img {
+	border-radius: 2em;
+	object-fit: contain;
+	width: 100%;
+	max-width: 100%;
+	display: inline-block;
+	background-color: whitesmoke;
+}
+
+.item .name {
+	font-weight: bold;
+	margin-bottom: 1px; /*아래 여백 줄이기*/
+}
+
+.item .mininame {
+	font-size: 11px;
+	color: gray;
+	line-height: 1;
+	letter-spacing: -0.5px; /* 문자 간의 간격 줄이기 */
+}
+
+.item dd {
+	text-align: left;
+	font-size: 12px;
+	/* 2줄이상 숨기기 처리 */
+	text-overflow: ellipsis;
+	overflow: hidden;
+	word-break: break-word;
+	display: -webkit-box;;
+	-webkit-line-clamp: 2; /*원하는 라인 수*/
+	-webkit-box-orient: vertical;
+}
+
+.logname dd {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.logname p {
+	color: gray;
+	font-size: 14px;
+	line-height: 0.3; /*글자 간격 줄이기*/
+}
+/*-------------------- item --------------------*/
+
+/*-------------------- button --------------------*/
+.button-container {
+	display: flex;
+	justify-content: center; /* 가로 가운데정렬 */
+	align-items: center; /* 세로 가운데정렬 */
+}
+
+.button {
+	border: 1px solid lightgray;
+	background-color: white;
+	width: 80px;
+	height: 35px;
+	border-radius: 1em;
+}
+/*-------------------- button --------------------*/
+
+/*네비게이션 위치들 히든으로 숨김*/
+.blind {
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: -1000em;
+}
+
+.skip a {
+	display: block;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: -1000em;
+	z-index: 9999;
+	width: 100%;
+	background-color: navy;
+	color: white;
+	font: bold 1.3em Tahoma, sans-serif;
+	text-decoration: none;
+	text-align: center;
+}
+
+.skip a:hover, .skip a:active, .skip a:focus {
+	top: 0;
+	padding: 0.5em 0;
+}
+
+/*
+[형식]
+font : 폰트 두께, 폰트 크기/ line-height 서체
+*/
+.category {
+	display: inline-block;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+/* 검색창 스타일 */
+.searchForm {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	margin-top: -50px !important; /* 검색창을 위로 올리기 (다른 CSS 영향 방지) */
+}
+
+#searchBox {
+	position: relative;
+	width: 60%%; /* 검색 박스 전체 너비 설정 */
+}
+
+#search {
+	padding: 8px;
+	padding-right: 35px; /* 돋보기 아이콘을 위한 오른쪽 패딩 */
+	font-size: 16px;
+	width: 40%;
+	border: 2px solid red;
+	border-radius: 3px;
+	font-family: 'Pretendard JP', sans-serif; /* 헤더와 동일한 폰트 적용 */
+}
+
+#search_imgbox {
+	position: absolute;
+	right: 10px; /* 돋보기를 오른쪽에 위치 */
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 16px;
+	color: black; /* 아이콘 색상 */
+}
+
+/*                   반응형 웹                      */
+body {
+	overflow-x: auto;
+}
+
+#wrap {
+	width: 100%; /* 기본 컨텐츠에 대해 100% 너비를 사용 */
+	max-width: 1080px; /* 1080px 이상의 화면에 대해서는 제한 */
+}
+
+/* @media only screen and (min-width:300px) and (max-width:480px) {
+	.container {
+		width: 100%;
+		height: auto;
+	}
+} */
+
+/*모바일 (화면 너비 480px 이하)*/
+@media ( max-width : 480px) {
+	#wrap {
+		display: flex;
+		padding: 10px;
+		flex-direction: column;
+	}
+	header {
+		/*  border-bottom: 1px solid lightslategray;*/
+		width: 100%;
+		height: 120px;
+		position: sticky;
+		top: 20; /* 도달했을때 고정시킬 위치 */
+		padding: 5px;
+		background-color: red;
+		z-index: 10;
+		font-family: "Pretendard JP", serif;
+	}
+}
+/*태블릿 (화면너비 768px 이하)*/
+@media ( max-width : 768px) {
+	#wrap {
+		display: flex;
+		flex-direction: column;
+	}
+	header {
+		width: 100%;
+		height: 120px;
+		position: sticky;
+		top: 20; /* 도달했을때 고정시킬 위치 */
+		padding: 5px;
+		background-color: lightgray;
+		z-index: 10;
+		font-family: "Pretendard JP", serif;
+	}
+	.layout {
+		display: inline-block;
+		margin: 5px;
+		width: calc(50% - 10px);
+		text-align: center;
+	}
+	.itemcenter {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap; /*줄이 넘치면 다음줄로*/
+	}
+	.item {
+		width: calc(20% - 10px); /* 각 아이템의 너비를 5개로 맞추기 위해 20%로 설정 */
+		margin-bottom: 10px; /* 아이템 간의 아래쪽 간격 */
+	}
+}
+
+/*                   반응형 웹                      */
