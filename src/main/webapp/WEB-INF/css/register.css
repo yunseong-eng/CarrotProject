@@ -14,6 +14,14 @@ body {
 	padding: 20px;
 }
 
+.logo {
+	width: 8%;
+}
+
+.logo a {
+	text-indent: -9999em; /*양수면 들여쓰기 음수면 내어쓰기*/
+}
+
 #right {
 	text-align: left;
 }
@@ -141,8 +149,13 @@ input[type="button"]:hover {
 		width: 100%;
 		overflow-x: auto;
 	}
-	th.label, td.input {
+	th.label {
+		display: inline-block;
+		text-align: left;
 		width: 100%;
+	}
+	td.input {
+		width: 80%;
 		text-align: left;
 	}
 	button {
@@ -150,5 +163,8 @@ input[type="button"]:hover {
 	}
 	.btn-primary {
 		width: 20%
+	}
+	.logo {
+		width: 10%; /*모바일 환경에선 로고 사이즈 줄임*/
 	}
 }

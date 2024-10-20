@@ -120,7 +120,13 @@ $(function() {
     	//인증하기 버튼을 눌렀을 때 동작
 	$("#emailAuth").click(function() {
     	const email = $("#email").val(); //사용자가 입력한 이메일 값 얻어오기
-    		
+    	const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    	if (email.trim() === "") {
+    	alert("이메일 주소를 입력해주세요.");
+		} else if (!emailPattern.test(email)) {
+    	alert("유효한 이메일 주소를 입력해주세요."); 
+    	
+		} else {	
     	//Ajax로 전송
         $.ajax({
         	url : '/carrot/user/emailAuth',
@@ -134,9 +140,10 @@ $(function() {
         		$("#authCode").attr("disabled", false);
         		code = result;
         		alert("인증 코드가 입력하신 이메일로 전송 되었습니다.");
-       		}
-        }); //End Ajax
-    }); // emailAuth
+       			}
+        	}); //End Ajax
+    	}
+	}); // emailAuth
     
         $("#authCode").on("focusout", function() {
     	const inputCode = $("#authCode").val(); //인증번호 입력 칸에 작성한 내용 가져오기
@@ -159,10 +166,24 @@ $(function() {
 });
 
 //이메일 선택하면 자동입력
-function change() {
+/*function change() {
         const emailSelect = document.getElementById("emailSelect").value;
         document.getElementById("email2").value = emailSelect;
     }
+    */
+    
+function change() {
+	const email1 = document.getElementById("email1").value;	
+	const emailSelect = document.getElementById("emailSelect");
+	let email2 = document.getElementById("email2").value;
+	
+	if (emailSelect.value) {
+	    email2 = emailSelect.value;
+	    document.getElementById("email2").value = email2; // select 선택 시 email2에 반영
+	}	
+	const fullEmail = email1 + "@" + email2;
+	document.getElementById("email").value = fullEmail;
+}
 
 //우편번호 - Daum API
 function checkPost() {
