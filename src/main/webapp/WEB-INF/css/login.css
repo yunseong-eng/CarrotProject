@@ -6,7 +6,7 @@ body {
 }
 
 #login-jsp {
-	width: 80%;
+	width: 50%;
 	margin: 50px auto;
 	background: #fff;
 	border-radius: 5px;
@@ -56,7 +56,7 @@ td.input {
 
 /* 입력 필드 스타일 */
 input[type="text"], input[type="password"] {
-	width: 30%;
+	width: 50%;
 	padding: 10px;
 	border: 1px solid #ddd;
 	border-radius: 4px;

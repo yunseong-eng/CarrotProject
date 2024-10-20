@@ -5,18 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="icon" href="../image/film_favicon.png" type="image/png"> -->
+<link rel="icon" href="../image/carrotLogo.png" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/myinfo.css">
 <title>회원정보수정</title>
 </head>
 <body>
-	<div id="myinfo-jsp" class="myinfo-jsp">
+	<div id="myinfo-jsp">
 		<div id="right">
-				<a href="/carrot"><img
-			src="${pageContext.request.contextPath}/image/carrotLogo.jpg"
-			class="logo"></a>
-			</a> <input type="hidden" name="checkpwd" id="checkpwd"
-				value="${user.password }">
+			<a href="/carrot"><img
+				src="${pageContext.request.contextPath}/image/carrotLogo.jpg"
+				class="logo"></a> </a> <input type="hidden" name="checkpwd"
+				id="checkpwd" value="${user.password }">
 			<div id="container">
 				<div id="myinfo">회원정보수정</div>
 				<form id="myinfoForm" name="myinfoForm">
@@ -67,9 +67,9 @@
 									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="019">019</option>
-							</select> - <input type="text" name="tel2" size="4" maxlength="4"
-								value="${user.tel2 }" class="input-tel"> - <input
-								type="text" name="tel3" size="4" maxlength="4"
+							</select> - <input type="text" id="tel2" name="tel2" size="4"
+								maxlength="4" value="${user.tel2 }" class="input-tel"> -
+								<input type="text" id="tel3" name="tel3" size="4" maxlength="4"
 								value="${user.tel3 }" class="input-tel"></td>
 						</tr>
 
@@ -115,8 +115,7 @@
 							<td colspan="3" align="center">
 								<button type="button" id="myinfoBtn">회원정보 수정</button>
 								<button type="reset" id="resetBtn">수정 취소</button>
-								<button type="button" id="deleteBtn">탈퇴</button>
-								<!-- <button type="button" id="deleteBtn" style="font-size: 10px !important; padding: 0px; width: 40px !important; height: 20px !important; background: gray !important; color: lightgray !important; float: right; white-space: nowrap">탈퇴</button> -->
+								<button type="button" id="deleteBtn">탈퇴</button> <!-- <button type="button" id="deleteBtn" style="font-size: 10px !important; padding: 0px; width: 40px !important; height: 20px !important; background: gray !important; color: lightgray !important; float: right; white-space: nowrap">탈퇴</button> -->
 							</td>
 						</tr>
 					</table>

@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="../image/carrotLogo.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/login.css">
 <title>로그인페이지</title>
@@ -55,27 +56,27 @@
 	<script type="text/javascript"
 		src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script type="text/javascript" src="/carrot/js/login.js"></script>
-	<script type="text/javascript">
 	<!-- 카카오 SDK -->
-		<script src="https://developers.kakao.com/sdk/js/kakao.js">
-	</script>
-	<script>
-		// 카카오 SDK 초기화
-		Kakao.init('YOUR_APP_KEY'); // 여기 YOUR_APP_KEY는 카카오에서 발급받은 키입니다.
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// 카카오 SDK 초기화
+			Kakao.init('YOUR_APP_KEY'); // 여기 YOUR_APP_KEY는 카카오에서 발급받은 키입니다.
 
-		// 로그인 버튼 클릭 이벤트
-		document.getElementById('kakao-login-btn').onclick = function() {
-			Kakao.Auth.login({
-				success : function(authObj) {
-					// 로그인 성공 시, 서버로 authObj를 보내 사용자 정보를 받아올 수 있습니다.
-					console.log(authObj);
-					window.location.href = '/yourapp/callback'; // 서버에서 인증 처리를 위해 리디렉션
-				},
-				fail : function(err) {
-					console.error(err);
-				},
-			});
-		};
+			// 로그인 버튼 클릭 이벤트
+			document.getElementById('kakaologinbtn').onclick = function() {
+				Kakao.Auth.login({
+					success : function(authObj) {
+						// 로그인 성공 시, 서버로 authObj를 보내 사용자 정보를 받아올 수 있습니다.
+						console.log(authObj);
+						window.location.href = '/yourapp/callback'; // 서버에서 인증 처리를 위해 리디렉션
+					},
+					fail : function(err) {
+						console.error(err);
+					}
+				});
+			};
+		});
 	</script>
 </body>
 </html>
