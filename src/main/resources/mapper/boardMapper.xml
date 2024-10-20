@@ -20,7 +20,7 @@
             </if>
         </where>
         ORDER BY createTime DESC
-        LIMIT #{startNum}, #{pageSize}
+        <!-- 페이징 처리 제거: LIMIT #{startNum}, #{pageSize} 삭제 -->
     </select>
 
     <!-- 게시글 목록 조회 (전체) -->

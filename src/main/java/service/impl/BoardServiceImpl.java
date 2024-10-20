@@ -6,16 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.BoardService;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
 @Service
 public class BoardServiceImpl implements BoardService {
     @Autowired
     private BoardDAO boardDAO;
-
-    private static final int PAGE_SIZE = 10;
 
     @Override
     public void writeBoard(BoardDTO boardDTO) {
@@ -24,12 +22,10 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public Map<String, Object> getBoardList(String category, int page) {
-        int startNum = (page - 1) * PAGE_SIZE;
         Map<String, Object> map = new HashMap<>();
         map.put("category", category);
-        map.put("startNum", startNum);
-        map.put("pageSize", PAGE_SIZE);
 
+        // 페이징 처리 제거
         List<BoardDTO> boardList = boardDAO.getBoardListByCategory(map);
 
         Map<String, Object> result = new HashMap<>();
@@ -37,6 +33,7 @@ public class BoardServiceImpl implements BoardService {
 
         return result;
     }
+
     @Override
     public List<BoardDTO> getAllBoardList() {
         return boardDAO.getAllBoardList();
