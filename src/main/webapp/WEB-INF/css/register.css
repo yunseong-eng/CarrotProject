@@ -14,6 +14,14 @@ body {
 	padding: 20px;
 }
 
+.logo {
+	width: 8%;
+}
+
+.logo a {
+	text-indent: -9999em; /*양수면 들여쓰기 음수면 내어쓰기*/
+}
+
 #right {
 	text-align: left;
 }
@@ -103,8 +111,6 @@ label {
 	font-weight: bold;
 }
 
-
-
 .input-email {
 	width: 30%;
 }
@@ -117,4 +123,48 @@ input[type="button"] {
 
 input[type="button"]:hover {
 	background-color: #0056b3;
+}
+
+/*태블릿 (화면너비 768px 이하)*/
+@media ( max-width : 768px) {
+	#register-jsp {
+		width: 90%;
+		margin: 20px auto;
+		padding: 15px;
+	}
+	input[type="text"], input[type="password"] {
+		width: 100%;
+	}
+	#tel2, #tel3, #email1, #email2 {
+		width: 25%;
+	}
+	select {
+		width: 25%;
+	}
+	input[type="email"] {
+		width: 68%;
+	}
+	table {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+	}
+	th.label {
+		display: inline-block;
+		text-align: left;
+		width: 100%;
+	}
+	td.input {
+		width: 80%;
+		text-align: left;
+	}
+	button {
+		width: 100%;
+	}
+	.btn-primary {
+		width: 20%
+	}
+	.logo {
+		width: 10%; /*모바일 환경에선 로고 사이즈 줄임*/
+	}
 }

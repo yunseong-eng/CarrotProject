@@ -5,16 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/register.css">
 <title>회원가입</title>
 </head>
 <body>
 	<div id="register-jsp" class="register-jsp">
 		<div id="right">
-			<a href="/carrot/"> <img src="../image/carrotLogo.jpg" width="100"
-				height="50" alt="carrot이동">
-			</a>
+			<a href="/carrot"><img
+			src="${pageContext.request.contextPath}/image/carrotLogo.jpg"
+			class="logo"></a>
 			<div id="container">
 				<div id="register">회원가입</div>
 				<form name="registerForm" id="registerForm">
@@ -35,7 +35,7 @@
 						</tr>
 						<!-- 비밀번호 확인 -->
 						<tr>
-							<th class="label"><label for="repassword">비밀번호 확인</label></th>
+							<th class="label"><label for="repassword">비밀번호 재확인</label></th>
 							<td class="input"><input type="password" id="repassword"
 								name="repassword" placeholder="비밀번호 재입력">
 								<div id="repasswordDiv"></div></td>
@@ -101,12 +101,11 @@
 						</tr>
 						<!-- 이메일 인증용 -->
 						<tr>
-							<th class="label"><label for="email1">이메일 인증</label></th>
-							<td class="input"><input  type="email" id="email"
-								name="email" class="form-control" placeholder="이메일 입력" 
-								 autofocus style="width: 40% !important;">
+							<th class="label"><label for="email1">인증</label></th>
+							<td class="input"><input  type="hidden" id="email"
+								name="email" class="form-control" autofocus>
 								<input type="button" value="인증하기" class="btn-primary"
-									id="emailAuth" style="width: 10% !important;"><input type="text" id="authCode"
+									id="emailAuth"><input type="text" id="authCode"
 								name="authCode" class="form-control" placeholder="인증코드 입력"
 								maxlength="6" disabled="disabled" autofocus> <span id="emailAuthWarn"></span>
 						</td></tr>

@@ -6,19 +6,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>carrot | 중고거래 FLEX</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+   <%--  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media.css">  --%>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->      
 </head>
 <body>
 <c:set var="context" value="${pageContext.request.contextPath}"></c:set>
-<div id="wrap">
+<div id="wrap" class="container">
     <header>
         <div id="header">
-            <a href="/carrot"><img src="${context}/image/carrotLogo.jpg" style="width: 80px; height: auto;"></a>
+            <a href="/carrot"><img src="${context}/image/carrotLogo.jpg" class="logo" ></a>
             <dl class="topnav">
                 <dt class="blind">top navigation</dt>
                 <!--   <dd><a href="#">고객센터</a></dd>
@@ -26,40 +26,41 @@
                   <dd><a href="#">관심</a></dd>
                   <dd><a href="#">알림</a></dd> -->
                   <c:if test="${user.userId == null}"> <!-- 세션이 없으면 로그인만 표시 -->
-                	<dd><a href="${pageContext.request.contextPath}/user/login">Login</a></dd>
+                   <dd><a href="http://localhost:8080/carrot/user/login">로그인</a></dd>
                   </c:if>
                   <c:if test="${user.userId != null}"> <!-- 사용자가 로그인한 상태 -->
                   <dd><h6>[${user.userId }] 님</h6></dd>
-                  	<dd><a href="${pageContext.request.contextPath}/user/myinfo">Mypage</a></dd>
-                  	<dd><a href="${pageContext.request.contextPath}/user/logout">Logout</a></dd>
+                     <dd><a href="/carrot/user/myinfo">마이페이지</a></dd>
+                     <dd><a href="/carrot/user/logout">로그아웃</a></dd>
                   </c:if>
             </dl>
-
-            <dl class="topnav2">
+           <dl class="topnav2">
                 <dt class="blind">top navigation</dt>
-                <dd><a href="#">APP</a></dd>
-                <dd><a href="#">IOS</a></dd>
-                <dd><a href="#">ANDROID</a></dd>
-                <dd><a href="#"><img src="${pageContext.request.contextPath}/image/d2.png" width="20"></a></dd>
+                <dd><a href="https://www.apple.com/kr/app-store/">APP</a></dd>
+                <dd><a href="https://apps.apple.com/kr/app/%EB%B2%88%EA%B0%9C%EC%9E%A5%ED%84%B0/id395672275">IOS</a></dd>
+                <dd><a href="https://play.google.com/store/apps/details?id=kr.co.quicket&hl=ko&pli=1">ANDROID</a></dd>
+                <dd><a href="https://png.pngtree.com/png-clipart/20220226/ourmid/pngtree-greedy-emoji-png-image_4459716.png"><img src="${pageContext.request.contextPath}/image/d2.png" width="20"></a></dd>
             </dl>
+
             <h2 class="blind">main navigation</h2>
             <ul class="mainnav">
                 <li><a href="${pageContext.request.contextPath}/board/listForm?category=전체">ALL</a></li>
-                <li><a href="${pageContext.request.contextPath}/board/listForm?category=의류">Clothes</a></li>
-                <li><a href="${pageContext.request.contextPath}/board/listForm?category=신발">Shoes</a></li>
+                <li><a href="${pageContext.request.contextPath}/board/listForm?category=의류">CLOTHES</a></li>
+                <li><a href="${pageContext.request.contextPath}/board/listForm?category=신발">SHOES</a></li>
             </ul>
             
-            <!-- 검색창 중앙에 배치 -->
-        	<div class="searchForm" style="margin: 0 auto; display: flex; justify-content: center; position: relative; z-index: 10;">
-		    <form id="searchForm" method="get" action="${pageContext.request.contextPath}/board/search">
-		        <div id="searchBox" style="position: relative; display: flex; align-items: center;">
-		            <input type="text" name="search" id="search" placeholder="ID, 상품명, 카테고리 입력" style="width: 450px; padding: 8px; padding-right: 35px; border: 2px solid red; border-radius: 3px; font-family: Pretendard JP, sans-serif;">
-		            <div id="search_imgbox" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
-		                <i class="fas fa-search"></i> <!-- Font Awesome 돋보기 아이콘 -->
-		            </div>
-		        </div>
-		    </form>
-			</div>
+           <!-- 검색창 중앙에 배치 -->
+           <div class="searchForm" style="margin: 0 auto; display: flex; justify-content: center; position: relative; z-index: 10;">
+          <form id="searchForm" method="get" action="${pageContext.request.contextPath}/board/search">
+              <div id="searchBox" style="position: relative; display: flex; align-items: center;">
+                  <input type="text" name="search" id="search" placeholder="ID, 상품명, 카테고리 입력" style="width: 300px; padding: 8px; padding-right: 35px; border: 2px solid red; border-radius: 3px; font-family: Pretendard JP, sans-serif;">
+                   <i class="fas fa-search"></i><div id="search_imgbox" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
+                      <!-- Font Awesome 돋보기 아이콘 -->
+                  </div>
+              </div>
+          </form>
+         </div>
+            
         </div><!--header-->
     </header>
 
@@ -112,7 +113,7 @@
                      </div>
                  </div>
     </span><br><br><br>
-    <div>
+    <div class="itemcenter">
         <div class="layout">
             <img src="${pageContext.request.contextPath}/image/item1.webp" alt="item1">
             <dd>크림 드로우</dd>
@@ -246,7 +247,7 @@
         <dd>Top Brand</dd>
         <p>인기 탑 브랜드</p>
     </div>
-    <div>
+    <div class="itemcenter">
         <div class="layout">
             <img src="${pageContext.request.contextPath}/topbrandimage/jordan.webp" alt="why">
             <dd>나이키</dd>

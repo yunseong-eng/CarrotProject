@@ -9,9 +9,9 @@
 </head>
 <body>
 	<div id="delete-jsp">
-		<a href="/carrot/"> <img src="../image/carrotLogo.jpg" width="100"
-			height="50" alt="carrot이동">
-		</a>
+		<a href="/carrot"><img
+			src="${pageContext.request.contextPath}/image/carrotLogo.jpg"
+			class="logo"></a>
 		<div class="container">
 			<form>
 				<h2>회원 탈퇴 안내</h2>
