@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="../image/carrotLogo.png" type="image/png">
 <link rel="stylesheet" href="../css/delete.css">
 <title>회원탈퇴</title>
 </head>
