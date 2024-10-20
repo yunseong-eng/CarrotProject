@@ -10,12 +10,11 @@
 </head>
 <body>
 	<div id="login-jsp">
-		<a href="/carrot/"> <img src="../image/kream.png" width="100"
+		<a href="/carrot/"> <img src="../image/carrotLogo.jpg" width="100"
 			height="50" alt="carrot이동">
 		</a>
 		<div id="container">
 			<div id="login">로그인</div>
-			<div id="login">로그인하쎔</div>
 			<form name="loginForm" id="loginForm">
 				<table>
 					<tr>

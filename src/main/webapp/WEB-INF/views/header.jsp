@@ -77,18 +77,18 @@
         <!-- 로고 및 메뉴 링크 -->
         <div>
             <a href="${pageContext.request.contextPath}/">
-                <img src="${pageContext.request.contextPath}/image/carrotLogo.png" alt="로고">
+                <img src="${pageContext.request.contextPath}/image/carrotLogo.jpg" alt="로고">
             </a>
-            <a href="${pageContext.request.contextPath}/board/listForm?category=전체">전체</a>
-            <a href="${pageContext.request.contextPath}/board/listForm?category=의류">의류</a>
-            <a href="${pageContext.request.contextPath}/board/listForm?category=신발">신발</a>
+            <a href="${pageContext.request.contextPath}/board/listForm?category=전체">ALL</a>
+            <a href="${pageContext.request.contextPath}/board/listForm?category=의류">CLOTHES</a>
+            <a href="${pageContext.request.contextPath}/board/listForm?category=신발">SHOES</a>
         </div>
 
         <!-- 검색창 -->
         <div class="searchForm">
-            <form id="searchForm" method="get" action="${pageContext.request.contextPath}/search">
+            <form id="searchForm" method="get" action="${pageContext.request.contextPath}/board/search">
                 <div id="searchBox">
-                    <input type="text" name="search" id="search" placeholder="상품명 입력">
+                    <input type="text" name="search" id="search" placeholder="ID, 상품명, 카테고리 입력">
                     <div id="search_imgbox">
                         <i class="fas fa-search"></i> <!-- Font Awesome 돋보기 아이콘 -->
                     </div>
@@ -96,6 +96,5 @@
             </form>
         </div>
     </div>
-    <hr>
 </body>
 </html>

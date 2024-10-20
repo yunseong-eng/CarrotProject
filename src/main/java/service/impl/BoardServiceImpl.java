@@ -55,6 +55,18 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public void deleteBoard(int boardId) {
+        // 게시글의 자식 댓글(대댓글)을 먼저 삭제
+        boardDAO.deleteChildCommentsByBoardId(boardId);
+        
+        // 부모 댓글을 삭제
+        boardDAO.deleteParentCommentsByBoardId(boardId);
+
+        // 게시글 삭제
         boardDAO.deleteBoard(boardId);
+    }
+
+    @Override
+    public List<BoardDTO> searchBoards(String searchKeyword) {
+        return boardDAO.searchBoards(searchKeyword);  
     }
 }
