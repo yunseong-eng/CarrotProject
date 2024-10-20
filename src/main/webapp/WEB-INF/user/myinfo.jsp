@@ -12,8 +12,9 @@
 <body>
 	<div id="myinfo-jsp" class="myinfo-jsp">
 		<div id="right">
-			<a href="/carrot/"> <img src="../image/carrotLogo.jpg" width="100"
-				height="50" alt="carrot이동">
+				<a href="/carrot"><img
+			src="${pageContext.request.contextPath}/image/carrotLogo.jpg"
+			class="logo"></a>
 			</a> <input type="hidden" name="checkpwd" id="checkpwd"
 				value="${user.password }">
 			<div id="container">

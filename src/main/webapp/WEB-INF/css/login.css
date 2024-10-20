@@ -17,6 +17,14 @@ body {
 	color: #333;
 }
 
+.logo {
+	width: 8%;
+}
+
+.logo a {
+	text-indent: -9999em; /*양수면 들여쓰기 음수면 내어쓰기*/
+}
+
 #right {
 	text-align: left;
 }
@@ -113,10 +121,15 @@ tr:last-child {
 		overflow-x: auto;
 	}
 	th.label, td.input {
-		width: 100%;
+		display: inline-block;
+		width : 100%;
 		text-align: left;
+		width: 100%;
 	}
 	button {
 		width: 100%;
+	}
+	.logo {
+		width: 10%; /*모바일 환경에선 로고 사이즈 줄임*/
 	}
 }

@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <link rel="icon" href="./image/carrotLogo.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>carrot | 중고거래 FLEX!!</title>
+<title>carrot | 중고거래 FLEX</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/main.css">
 
@@ -38,7 +38,7 @@
 					<c:if test="${user.userId == null}">
 						<!-- 세션이 없으면 로그인만 표시 -->
 						<dd>
-							<a href="http://localhost:8080/carrot/user/login">로그인</a>
+							<a href="${pageContext.request.contextPath}/user/login">로그인</a>
 						</dd>
 					</c:if>
 					<c:if test="${user.userId != null}">
@@ -47,10 +47,10 @@
 							<h6>[${user.userId }] 님</h6>
 						</dd>
 						<dd>
-							<a href="/carrot/user/myinfo">마이페이지</a>
+							<a href="${pageContext.request.contextPath}/user/myinfo">마이페이지</a>
 						</dd>
 						<dd>
-							<a href="/carrot/user/logout">로그아웃</a>
+							<a href="${pageContext.request.contextPath}/user/logout">로그아웃</a>
 						</dd>
 					</c:if>
 				</dl>

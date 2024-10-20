@@ -10,9 +10,9 @@
 </head>
 <body>
 	<div id="login-jsp">
-		<a href="/carrot/"> <img src="../image/carrotLogo.jpg" width="100"
-			height="50" alt="carrot이동">
-		</a>
+		<a href="/carrot"><img
+			src="${pageContext.request.contextPath}/image/carrotLogo.jpg"
+			class="logo"></a>
 		<div id="container">
 			<div id="login">로그인</div>
 			<form name="loginForm" id="loginForm">
