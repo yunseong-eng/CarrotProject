@@ -236,7 +236,7 @@ button:hover {
 .edit-delete-buttons {
     position: absolute; /* 위치를 자유롭게 조정 */
     top: 650px; /* 더 아래로 이동 */
-    right: 860px; /* 더 왼쪽으로 이동 */
+    right: 950px; /* 더 왼쪽으로 이동 */
     display: flex;
     gap: 20px; /* 수정, 삭제 버튼 사이의 간격 */
 }
