@@ -12,6 +12,7 @@
    <%--  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media.css">  --%>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">      
 </head>
 <body>
 <c:set var="context" value="${pageContext.request.contextPath}"></c:set>
@@ -26,12 +27,12 @@
                   <dd><a href="#">관심</a></dd>
                   <dd><a href="#">알림</a></dd> -->
                   <c:if test="${user.userId == null}"> <!-- 세션이 없으면 로그인만 표시 -->
-                   <dd><a href="http://localhost:8080/carrot/user/login">로그인</a></dd>
+                   <dd><a href="${pageContext.request.contextPath}/user/login">로그인</a></dd>
                   </c:if>
                   <c:if test="${user.userId != null}"> <!-- 사용자가 로그인한 상태 -->
                   <dd><h6>[${user.userId }] 님</h6></dd>
-                     <dd><a href="/carrot/user/myinfo">마이페이지</a></dd>
-                     <dd><a href="/carrot/user/logout">로그아웃</a></dd>
+                     <dd><a href="${pageContext.request.contextPath}/user/myinfo">마이페이지</a></dd>
+                     <dd><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></dd>
                   </c:if>
             </dl>
            <dl class="topnav2">
@@ -54,8 +55,9 @@
           <form id="searchForm" method="get" action="${pageContext.request.contextPath}/board/search">
               <div id="searchBox" style="position: relative; display: flex; align-items: center;">
                   <input type="text" name="search" id="search" placeholder="ID, 상품명, 카테고리 입력" style="width: 300px; padding: 8px; padding-right: 35px; border: 2px solid red; border-radius: 3px; font-family: Pretendard JP, sans-serif;">
-                   <i class="fas fa-search"></i><div id="search_imgbox" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
-                      <!-- Font Awesome 돋보기 아이콘 -->
+                   <div id="search_imgbox">
+                   <i class="fas fa-search"></i>
+                   <!-- Font Awesome 돋보기 아이콘 -->
                   </div>
               </div>
           </form>
