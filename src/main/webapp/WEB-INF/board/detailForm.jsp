@@ -19,6 +19,11 @@
             replyForm.style.display = "none";
         }
     }
+
+    // 삭제 확인창을 띄우는 함수
+    function confirmDelete() {
+        return confirm("정말 삭제하시겠습니까?");
+    }
 </script>
 </head>
 <body>
@@ -38,7 +43,7 @@
     <!-- 오른쪽 섹션: 게시글 정보 -->
     <div class="right-section">
         <!-- 게시글 제목 -->
-        <h1>${board.title}</h1>
+        <h2>${board.title}</h2>
 
         <!-- 조회수 -->
         <div class="views">
@@ -85,7 +90,7 @@
 <c:if test="${isOwner}">
     <div class="edit-delete-buttons">
         <a href="${pageContext.request.contextPath}/board/updateForm/${board.boardId}" class="btn btn-primary">수정</a>
-        <form action="${pageContext.request.contextPath}/board/delete" method="post" style="display:inline;">
+        <form action="${pageContext.request.contextPath}/board/delete" method="post" style="display:inline;" onsubmit="return confirmDelete()">
             <input type="hidden" name="boardId" value="${board.boardId}">
             <input type="hidden" name="category" value="${board.category}">
             <button type="submit" class="btn btn-danger">삭제</button>
@@ -102,7 +107,7 @@
             <input type="hidden" name="boardId" value="${board.boardId}">
             <textarea name="content" placeholder="댓글을 입력하세요" style="height: 50px;"></textarea>
             <button type="submit">댓글 작성</button>
-            <h4>댓글 작성 시 매너를 지켜주세요! 😊</h4>
+            <h4>작성 시 매너를 지켜주세요! 😊</h4>
         </form>
 
         <!-- 댓글 목록 -->
@@ -139,7 +144,8 @@
                 </div>
             </c:if>
         </c:forEach>
-	</div>
+    </div>
+    </div>
 </div>
 </body>
 </html>
