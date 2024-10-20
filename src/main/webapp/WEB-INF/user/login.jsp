@@ -42,7 +42,7 @@
 						<th class="label"></th>
 						<td class="input"><a id="kakaologinbtn" class="kakaologinbtn"
 							href="#"> <img src="../image/kakao_login_medium_wide.png"
-								alt="카카오톡 로그인"/>
+								alt="카카오톡 로그인" />
 						</a>
 							<div id="kakaoDiv"></div></td>
 					</tr>
@@ -58,8 +58,6 @@
 	<script type="text/javascript">
 	<!-- 카카오 SDK -->
 		<script src="https://developers.kakao.com/sdk/js/kakao.js">
-	</script>
-	<script>
 		// 카카오 SDK 초기화
 		Kakao.init('YOUR_APP_KEY'); // 여기 YOUR_APP_KEY는 카카오에서 발급받은 키입니다.
 

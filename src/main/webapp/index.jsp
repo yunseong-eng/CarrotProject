@@ -6,17 +6,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="./image/carrotLogo.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>carrot | 중고거래 FLEX!!</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/main.css">
+
 <%--  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/media.css">  --%>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <!-- Font Awesome -->
 </head>
 <body>
@@ -165,9 +168,7 @@
 						class="slideshow-image">
 				</div>
 			</div>
-		</span><br>
-		<br>
-		<br>
+		</span><br> <br> <br>
 		<div class="itemcenter">
 			<div class="layout">
 				<img src="${pageContext.request.contextPath}/image/item1.webp"
@@ -220,10 +221,7 @@
 				<dd>러닝화 완벽 준비</dd>
 			</div>
 		</div>
-		<br>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br> <br>
 		<hr>
 		<br>
 		<div class="logname">
@@ -318,10 +316,7 @@
 		<div class="button-container">
 			<button class="button">더보기</button>
 		</div>
-		<br>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br> <br>
 		<hr>
 		<br>
 
@@ -422,10 +417,7 @@
 				<dd>산산기어</dd>
 			</div>
 		</div>
-		<br>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br> <br>
 		<hr>
 		<br>
 		<!-----------------------------------------반복--------------------------------------->
